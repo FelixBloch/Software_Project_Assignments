@@ -32,13 +32,28 @@ let createBand = () => {
 
 createBand();
 
+// copying the object
 const Rammstein = {...band};
+
+// displaying the band
 console.log(`BAND: `);
 
 for(var i in Rammstein){
     console.log(`${i}: ${Rammstein[i]}`);
 }
 
+// trying it in a different way
+Object.keys(Rammstein).forEach(function (item) {
+	console.log(`${item}: ${Rammstein[item]}`); // value
+});
+
+function findKeyboardist(arr, query) {
+    return arr.filter(function(name) {
+        return name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+    })
+  }
+  
+  console.log(findKeyboardist(lastNameRepository, 'Lo'));
 
 // For the second part I went through all the examples and did my version of each example
 
@@ -75,5 +90,14 @@ fun1(a,b);
 var c = 4;
 var d = 7;
 
-let ar1 = [a, b, c, d];
-let ar2 = [9, 5, ...ar1];
+{
+    let ar1 = [a, b, c, d];
+    let ar2 = [9, 5, ...ar1];
+
+    console.log(`Array 1: ${ar1}`);
+    console.log(`Array 2: ${ar2}`);
+
+    let map1 = ar2.map(x => Math.sqrt(x));
+    console.log(`Sqare root of Array 2: ${map1}`);
+}
+
