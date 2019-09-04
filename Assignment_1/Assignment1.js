@@ -5,10 +5,6 @@ console.log(`*******************************`);
 console.log(`*********** Assignment 1 *********`);
 console.log(`*******************************`);
 
-// The first part is just a little programme I was playing around with
-
-console.log(`PART 1`);
-
 const firstNameRepository = ["Till", "Richard", "Paul", "Oliver", "Christoph", "Christian",];
 const lastNameRepository = ["Lindemann", "Kruspe", "Landers", "Riedel", "Schneider", "Lorenz",];
 
@@ -55,10 +51,6 @@ function findKeyboardist(arr, query) {
   
   console.log(findKeyboardist(lastNameRepository, 'Lo'));
 
-// For the second part I went through all the examples and did my version of each example
-
-console.log(`PART 2`);
-
 var a = 2;
 var b = 3;
 
@@ -91,13 +83,45 @@ var c = 4;
 var d = 7;
 
 {
-    let ar1 = [a, b, c, d];
-    let ar2 = [9, 5, ...ar1];
+    let arr1 = [a, b, c, d];
+    let arr2 = [...arr1, 9, 5,];
 
-    console.log(`Array 1: ${ar1}`);
-    console.log(`Array 2: ${ar2}`);
+    console.log(`Array 1: ${arr1}`);
+    console.log(`Array 2: ${arr2}`);
 
-    let map1 = ar2.map(x => Math.sqrt(x));
+    let map1 = arr2.map(item => Math.sqrt(item));
     console.log(`Sqare root of Array 2: ${map1}`);
 }
 
+class Rain {
+    constructor(type, hazard){
+        this.name = 'Rain';
+        this.type = type;
+        this.hazard = hazard;
+    }
+
+    rainInfo (){
+        console.log(`Todays ${this.name}-designation is ${this.type}.
+        The hazard is ${this.hazard}`)
+    }
+    
+}
+
+class Raindrop extends Rain {
+    constructor(liquid, speed){
+        super(liquid, speed);
+        this.name = 'Raindrop';
+    }
+}
+
+let r1 = new Rain('Short shower', 'mild');
+r1.rainInfo();
+
+let r2 = new Rain('Thunderstorm', 'moderate');
+r2.rainInfo();
+
+const rd1 = new Raindrop('Water', 'mild');
+rd1.rainInfo();
+
+let rd2 = new Raindrop('Lava', 'extreme');
+rd2.rainInfo();
