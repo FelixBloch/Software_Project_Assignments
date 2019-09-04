@@ -18,12 +18,6 @@ let createBand = () => {
     band.bassist = `${firstNameRepository[3]} ${lastNameRepository[3]}`;
     band.drummer = `${firstNameRepository[4]} ${lastNameRepository[4]}`;
     band.keyboardist = `${firstNameRepository[5]} ${lastNameRepository[5]}`;
-    
-    /*for(var j in band){
-        var l = 0;
-        band.j = `${firstNameRepository[l]} ${lastNameRepository[l]}`;
-        l++;
-    }*/
 };
 
 createBand();
@@ -51,10 +45,17 @@ function findKeyboardist(arr, query) {
   
   console.log(findKeyboardist(lastNameRepository, 'Lo'));
 
+
+// ----------
+
+var myBirthday = [1997, 7, 30, 13];
+var bday = new Date(...myBirthday);
+console.log(bday);
+
 var a = 2;
 var b = 3;
 
-function fun1(aa, bb){
+function fun1(aa, bb = 10){
     let c = 4;
 
     console.log(`If a=${aa} and b=${bb} then their sum is ${aa+bb}.`);
@@ -77,7 +78,7 @@ fun1(a, b);
     fun1(d, e);
 }
 
-fun1(a,b);
+fun1(a);
 
 var c = 4;
 var d = 7;
@@ -92,6 +93,11 @@ var d = 7;
     let map1 = arr2.map(item => Math.sqrt(item));
     console.log(`Sqare root of Array 2: ${map1}`);
 }
+
+(function (){
+    console.log(`The sqr root of a is ${Math.sqrt(a)}.
+    The sqr root of b is ${Math.sqrt(b)}.`)
+})();
 
 class Rain {
     constructor(type, hazard){
